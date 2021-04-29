@@ -1,24 +1,11 @@
-export const addProductToCart = (productId) => ({
-  type: "ADD_PRODUCT",
-  payload: productId,
-});
+import { createAction } from "@reduxjs/toolkit";
 
-export const incrementQuantity = (cartIndex) => ({
-  type: "INCREMENT_QUANTITY",
-  payload: cartIndex,
-});
+export const addProductToCart = createAction("ADD_PRODUCT");
 
-export const decrementQuantity = (cartIndex) => ({
-  type: "DECREMENT_QUANTITY",
-  payload: cartIndex,
-});
+export const incrementQuantity = createAction("INCREMENT_QUANTITY");
 
-export const removeCartItem = (cartIndex) => ({
-  type: "REMOVE_CART_ITEM",
-  payload: cartIndex,
-});
+export const decrementQuantity = createAction("DECREMENT_QUANTITY");
 
-export const removeProduct = (producId) => ({
-  type: "REMOVE_PRODUCT",
-  payload: producId,
-});
+export const removeCartItem = createAction("REMOVE_CART_ITEM");
+
+export const removeProduct = createAction("REMOVE_PRODUCT");
