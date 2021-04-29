@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addProductToCart } from "../logic/actions";
+import { addProductToCart, removeProduct } from "../logic/actions";
 
 export function Product({ productId }) {
   const dispatch = useDispatch();
@@ -19,6 +19,13 @@ export function Product({ productId }) {
         }}
       >
         Add
+      </button>
+      <button
+        onClick={() => {
+          dispatch(removeProduct(productId));
+        }}
+      >
+        x
       </button>
     </div>
   );

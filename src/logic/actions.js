@@ -17,3 +17,8 @@ export const removeCartItem = (cartIndex) => ({
   type: "REMOVE_CART_ITEM",
   payload: cartIndex,
 });
+
+export const removeProduct = (producId) => ({
+  type: "REMOVE_PRODUCT",
+  payload: producId,
+});

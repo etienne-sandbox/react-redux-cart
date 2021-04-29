@@ -64,5 +64,12 @@ export function reducer(state = initialState, action) {
       draft.cart.splice(action.payload, 1);
     });
   }
+  if (action.type === "REMOVE_PRODUCT") {
+    return produce(state, (draft) => {
+      const productId = action.payload;
+      draft.products = draft.products.filter((p) => p.id !== productId);
+      draft.cart = draft.cart.filter((item) => item.productId !== productId);
+    });
+  }
   return state;
 }
